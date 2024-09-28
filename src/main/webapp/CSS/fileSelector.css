@@ -1,0 +1,77 @@
+/* 模态框背景 */
+.fileSelectorModal {
+    display: none; /* 默认隐藏 */
+    position: fixed; /* 固定位置 */
+    z-index: 1; /* 置于顶层 */
+    left: 0;
+    top: 0;
+    width: 100%; /* 宽度100% */
+    height: 100%; /* 高度100% */
+    overflow: auto; /* 如果需要滚动条 */
+    background-color: rgba(0,0,0,0.4); /* 半透明背景 */
+}
+
+/* 模态框内容 */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15%从顶部和居中 */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* 宽度80% */
+    max-width: 500px; /* 最大宽度500px */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* 轻微的阴影效果 */
+    animation-name: animationTop;
+    animation-duration: 0.4s;
+}
+
+/* 添加动画 */
+@keyframes animationTop {
+    from {top: -300px; opacity: 0}
+    to {top: 15%; opacity: 1}
+}
+
+/* 关闭按钮 */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 标题 */
+.modal-content h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* 文件上传输入 */
+.modal-content input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* 边框包含在宽度内 */
+}
+
+/* 按钮 */
+.modal-content button {
+    background-color: #ff69b4;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.modal-content button:hover {
+    opacity: 1;
+}

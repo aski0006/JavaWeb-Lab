@@ -1,0 +1,216 @@
+:root {
+    --background-color: #fafafa;
+    --text-color: #333;
+    --button-border-color: #ff69b4;
+    --button-background-color: #ff69b4;
+    --button-hover-background-color: #ff1493;
+}
+
+[data-theme="dark"] {
+    --background-color: #1e1e1e;
+    --text-color: #fff;
+    --button-border-color: #bd93f9;
+    --button-background-color: #bd93f9;
+    --button-hover-background-color: #11acee;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    transition: background 0.5s; /* 过渡效果 */
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.header-left {
+    font-size: 24px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 36px;
+        padding: 15px 0;
+    }
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: gray;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--text-color);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: black;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* 主要内容区域 */
+.main-content {
+    display: flex;
+    padding: 20px;
+}
+
+.profile-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-id {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column; /* 设置方向为竖直 */
+    padding: 20px;
+    width: 200px; /* 设置导航栏宽度 */
+}
+
+.logo {
+    color: var(--text-color);
+    font-size: 24px;
+    margin-bottom: 20px; /* logo 与链接间隔 */
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 10px 0; /* 链接间距 */
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--button-hover-background-color); /* 悬停时改变颜色 */
+}
+
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
+.profile-time {
+    margin: 20px 0 20px 0;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.profile-time span {
+    display: inline-block;
+    animation: jump 1s ease-in-out infinite;
+}
+
+.articles-section {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* 竖直方向出现滚动条 */
+    transition: background 0.5s; /* 背景过渡效果（可选） */
+}
+
+article {
+    background-color: var(--background-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+button {
+    border: 2px solid var(--button-border-color); /* 使用更柔和的粉色边框 */
+    border-radius: 5px;
+    background-color: var(--button-background-color); /* 使用更柔和的粉色背景 */
+    font-family: 'Georgia', serif;
+    font-size: 12px; /* 增加字体大小以提高可读性 */
+    color: var(--text-color); /* 设置文字颜色为白色 */
+    padding: 10px 20px; /* 增加内边距以提高按钮的可点击区域 */
+    cursor: pointer; /* 设置鼠标指针为手型 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 添加过渡效果 */
+}
+
+button:hover {
+    background-color: var(--button-background-color); /* 鼠标悬停时改变背景颜色 */
+    border-color: var(--button-hover-background-color); /* 鼠标悬停时改变边框颜色 */
+}
+
+button:active {
+    background-color: white;
+    color: #333333;
+    border-color: #333333; /* 点击时改变边框颜色 */
+}
