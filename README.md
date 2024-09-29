@@ -10,3 +10,14 @@
 2. ### You can select **HTTPS** or **SSH** link to clone it form web to locality.
 
 ***
+# Web Preview
+***
+### Light Theme
+
+![Light Web Preview](src/main/webapp/Images/Snipaste_2024-09-28_22-47-10.png)
+
+***
+
+### Dark Theme
+
+![Dark Web Preveiw](src/main/webapp/Images/Snipaste_2024-09-28_22-47-17.png)
