@@ -4,10 +4,10 @@ function changeUserImage() {
     fileSelectorModal.style.display = 'block';
 }
 
-const close = document.getElementById('fileSelectorCloseButton');
-close.addEventListener('click', () => {
-    fileSelectorModal.style.display = 'none';
-})
+document.getElementById('fileSelectorCloseButton')
+    .addEventListener('click', () => {
+        fileSelectorModal.style.display = 'none';
+    })
 
 window.addEventListener('click', (event) => {
     if (event.target === fileSelectorModal) {
@@ -21,12 +21,16 @@ function uploadImage() {
     if (file) {
         const reader = new FileReader();
         reader.onload = function(e) {
-            // 获取文件的本地URL
+            // 获取文件的 `data:` URL
             const fileUrl = e.target.result;
 
-            // 这里可以添加上传文件的代码
-            alert(fileUrl);
-        }
+            // 获取目标图片元素
+            const profileImage = document.querySelector('.profile-image');
+
+            // 替换图片的 `src` 属性
+            profileImage.src = fileUrl;
+
+        };
         reader.readAsDataURL(file); // 读取文件内容
     }
     fileSelectorModal.style.display = "none"; // 关闭模态框
