@@ -46,17 +46,21 @@
 <div id="loginModal" class="modal">
     <div class="modal-content">
         <span class="close" id="loginCloseButton">&times;</span>
-        <h2>Login</h2>
+        <h2 id="modalTitle">Login</h2>
         <form id="loginForm">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
+            <label for="nickname" id="nicknameLabel" style="display: none;">Nickname:</label>
+            <input type="text" id="nickname" name="nickname" style="display: none;" required>
+            <button type="button" id="loginSubmitButton">Login</button>
             <button type="button" id="register">Register</button>
+            <button type="button" id="registerSubmitButton" style="display: none;">Register</button>
         </form>
     </div>
 </div>
+
 
 <!-- 图片上传 -->
 <div id="fileSelectorModal" class="fileSelectorModal">

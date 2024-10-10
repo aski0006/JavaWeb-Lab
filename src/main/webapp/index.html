@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/loginModal.css">
-    <link rel="stylesheet" href="../CSS/fileSelector.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/loginModal.css">
+    <link rel="stylesheet" href="CSS/fileSelector.css">
 </head>
 <body id="body">
 <header id="header">
@@ -22,7 +22,7 @@
         <nav class="navbar">
             <div class="logo">ArkNight</div>
             <div id="clock" class="profile-time"><span>00</span>:<span>00</span>:<span>00</span></div>
-            <img src="../Images/image_01.jpg" alt="profile-photo" class="profile-image" onclick="changeUserImage()">
+            <img src="Images/image_01.jpg" alt="profile-photo" class="profile-image" onclick="changeUserImage()">
             <div class="profile-info">
                 <p class="profile-id" id="userId">unknown</p>
                 <button type="button" id="loginButton" class="profile-button">Login</button>
@@ -45,17 +45,21 @@
 <div id="loginModal" class="modal">
     <div class="modal-content">
         <span class="close" id="loginCloseButton">&times;</span>
-        <h2>Login</h2>
+        <h2 id="modalTitle">Login</h2>
         <form id="loginForm">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
+            <label for="nickname" id="nicknameLabel" style="display: none;">Nickname:</label>
+            <input type="text" id="nickname" name="nickname" style="display: none;" required>
+            <button type="button" id="loginSubmitButton">Login</button>
             <button type="button" id="register">Register</button>
+            <button type="button" id="registerSubmitButton" style="display: none;">Register</button>
         </form>
     </div>
 </div>
+
 
 <!-- 图片上传 -->
 <div id="fileSelectorModal" class="fileSelectorModal">
@@ -67,8 +71,8 @@
     </div>
 </div>
 <!-- 脚本 -->
-<script type="text/javascript" src="../Scripts/login.js"></script>
-<script type="text/javascript" src="../Scripts/index.js"></script>
-<script type="text/javascript" src="../Scripts/submitUserImage.js"></script>
+<script type="text/javascript" src="Scripts/login.js"></script>
+<script type="text/javascript" src="Scripts/index.js"></script>
+<script type="text/javascript" src="Scripts/submitUserImage.js"></script>
 </body>
 </html>
